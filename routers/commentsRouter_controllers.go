@@ -6,6 +6,20 @@ import (
 
 func init() {
 
+	beego.GlobalControllerRouter["wedd-in/controllers:InvitationController"] = append(beego.GlobalControllerRouter["wedd-in/controllers:InvitationController"],
+		beego.ControllerComments{
+			Method: "Get",
+			Router: `/:invitationID`,
+			AllowHTTPMethods: []string{"get"},
+			Params: nil})
+
+	beego.GlobalControllerRouter["wedd-in/controllers:InvitationController"] = append(beego.GlobalControllerRouter["wedd-in/controllers:InvitationController"],
+		beego.ControllerComments{
+			Method: "Post",
+			Router: `/`,
+			AllowHTTPMethods: []string{"post"},
+			Params: nil})
+
 	beego.GlobalControllerRouter["wedd-in/controllers:ObjectController"] = append(beego.GlobalControllerRouter["wedd-in/controllers:ObjectController"],
 		beego.ControllerComments{
 			Method: "Post",
